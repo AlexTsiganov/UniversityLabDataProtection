@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XRH-yH-GAm">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!-- Лабораторная работа №1-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-RN-ND1">
+                                <rect key="frame" x="52" y="184" width="206" height="30"/>
+                                <state key="normal" title="Закодировать сообщение">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSendButtonClick" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VfO-t2-kQ0"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i5B-LW-dA6">
+                                <rect key="frame" x="142" y="213" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeJ-K4-Gd6">
+                                <rect key="frame" x="16" y="258" width="288" height="297"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oHc-MU-vz3" appends="YES" id="V9A-sc-QCC"/>
+                                </connections>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Текст сообщения" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-a4-Dh4">
+                                <rect key="frame" x="16" y="85" width="288" height="91"/>
+                                <color key="backgroundColor" red="0.93333339691162109" green="0.96862751245498657" blue="0.9803922176361084" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="eLN-hx-VqT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91372555494308472" green="0.92941182851791382" blue="0.97254908084869385" alpha="1" colorSpace="deviceRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="LI1-a4-Dh4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="FHd-V3-odm"/>
+                            <constraint firstItem="LI1-a4-Dh4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="21" id="Iqn-PX-fIh"/>
+                            <constraint firstAttribute="trailing" secondItem="LI1-a4-Dh4" secondAttribute="trailing" constant="16" id="qdA-xp-dZc"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gzo-M0-ENC" appends="YES" id="jhA-a9-X6v"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title=" Лабораторная работа №1" id="s52-JK-C7d"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="imageView" destination="jeJ-K4-Gd6" id="ydD-Rh-gVn"/>
+                        <outlet property="indicator" destination="i5B-LW-dA6" id="Cv8-9D-eor"/>
+                        <outlet property="textViewIn" destination="LI1-a4-Dh4" id="zgE-bB-lmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oHc-MU-vz3">
+                    <connections>
+                        <action selector="onImageViewTap" destination="vXZ-lx-hvc" id="7S6-JB-u0B"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Gzo-M0-ENC">
+                    <connections>
+                        <action selector="onViewTap" destination="vXZ-lx-hvc" id="cmD-cY-57N"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1074" y="379"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VaA-sw-eQw">
+            <objects>
+                <navigationController id="XRH-yH-GAm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qJ9-g4-S5L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1lG-7G-BRt" kind="relationship" relationship="rootViewController" id="2xI-Pq-3LU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-9i-ipC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-131" y="992"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="qIu-Zb-zNl">
+            <objects>
+                <viewController id="giD-mM-odV" customClass="TitleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GyD-Go-84D"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sr2-Ri-wuH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nEL-2m-kLK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Copyright (c) 2015 Alex Tsiganov. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bvA-Ew-LVf">
+                                <rect key="frame" x="20" y="527" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="9XV-pU-DtG">
+                                <rect key="frame" x="20" y="115" width="281" height="141"/>
+                                <string key="text" base64-UTF8="YES">
+ENCb0LDQsdGA0L7QsNGC0L7RgNC90LDRjyDRgNCw0LHQvtGC0LAg0L/QviDQutGD0YDRgdGDOg
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbl-Lg-rqT">
+                                <rect key="frame" x="20" y="16" width="281" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Крымский Федеральный Университет имени В.И. Вернадского
+«Таврическая академия»
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rY-u0-VkK">
+                                <rect key="frame" x="-7" y="245" width="327" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Защита информации в компьютерных системах">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ych-lg-bbX">
+                                <rect key="frame" x="50" y="316" width="221" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="доц. Михерский Р. М.">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMk-Xw-URS">
+                                <rect key="frame" x="126" y="407" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Выполнили: Цыганов А.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-UE-Pev">
+                                <rect key="frame" x="126" y="425" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТМ-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-Y4-3uE">
+                                <rect key="frame" x="126" y="443" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Захаренков И.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyP-ef-F74">
+                                <rect key="frame" x="126" y="462" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТП-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xYt-BW-pSF" appends="YES" id="iZr-4M-pcA"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="ybo-6a-34g"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="1lG-7G-BRt" kind="push" identifier="pushViewController" id="OpY-6t-eCd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzB-nB-60h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xYt-BW-pSF">
+                    <connections>
+                        <action selector="onTap" destination="giD-mM-odV" id="UlR-Vt-r0D"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="245" y="992"/>
+        </scene>
+        <!--Выберите лабораторную работу-->
+        <scene sceneID="cUs-9y-Aix">
+            <objects>
+                <viewController id="1lG-7G-BRt" customClass="SelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6r6-r6-Q80"/>
+                        <viewControllerLayoutGuide type="bottom" id="oa2-zM-Odd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uRs-ZD-LTl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-Lw-dSs">
+                                <rect key="frame" x="38" y="135" width="249" height="49"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title=" Лабораторная работа №1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="TLo-vu-b5D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRA-qW-Lwo">
+                                <rect key="frame" x="38" y="192" width="249" height="49"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title=" Лабораторная работа №2">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uSA-Fz-UCt" kind="push" id="u5X-ox-S4H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-Ev-1uY">
+                                <rect key="frame" x="36" y="249" width="249" height="49"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title=" Лабораторная работа №4">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVz-Lw-x58" kind="push" id="daK-ho-zBr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZK-8u-SkW">
+                                <rect key="frame" x="36" y="499" width="249" height="49"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title="Справка">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dKf-W0-xDR" kind="modal" id="fck-kr-TZa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Выберите лабораторную работу" id="1sg-vv-qv7"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1g-6p-dBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="1018"/>
+        </scene>
+        <!-- Лабораторная работа №2-->
+        <scene sceneID="Zrs-Ua-rFc">
+            <objects>
+                <viewController id="uSA-Fz-UCt" customClass="ViewController2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tgH-PV-sOH"/>
+                        <viewControllerLayoutGuide type="bottom" id="mND-pe-06t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C7d-zw-rPr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwL-KL-u5D">
+                                <rect key="frame" x="52" y="399" width="203" height="30"/>
+                                <state key="normal" title="Закодировать сообщение">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCoddingButtonClick" destination="uSA-Fz-UCt" eventType="touchUpInside" id="uhh-I1-xuR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-Ha-kcr">
+                                <rect key="frame" x="176" y="171" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Размер блока:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-Mf-XaR">
+                                <rect key="frame" x="34" y="175" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZDy-or-7de">
+                                <rect key="frame" x="176" y="209" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Кол-во страниц:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYa-zB-X5I">
+                                <rect key="frame" x="34" y="213" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ne-LF-wwA">
+                                <rect key="frame" x="176" y="209" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Номер страниц:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-5t-2gD">
+                                <rect key="frame" x="34" y="249" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-bW-yVs">
+                                <rect key="frame" x="176" y="245" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifh-iv-L3e">
+                                <rect key="frame" x="16" y="437" width="288" height="85"/>
+                                <color key="backgroundColor" red="0.87843143939971924" green="0.92156869173049927" blue="0.23137256503105164" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS0-k1-2Hy">
+                                <rect key="frame" x="41" y="530" width="239" height="30"/>
+                                <state key="normal" title="Отправить сообщение">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSendButtonClick" destination="uSA-Fz-UCt" eventType="touchUpInside" id="R7Z-jP-vI7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-q2-eU4">
+                                <rect key="frame" x="16" y="310" width="288" height="81"/>
+                                <color key="backgroundColor" red="0.18275326650000001" green="0.86666666670000003" blue="0.17757080149999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Cu2-pu-TBt">
+                                <rect key="frame" x="28" y="283" width="276" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Cгенерировать ключ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateKeyButtonClick" destination="uSA-Fz-UCt" eventType="touchUpInside" id="M8V-yI-GGr"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="asdfg" translatesAutoresizingMaskIntoConstraints="NO" id="iUN-0m-yL4">
+                                <rect key="frame" x="16" y="72" width="288" height="91"/>
+                                <color key="backgroundColor" red="0.93333339689999995" green="0.96862751250000001" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ebm-QB-87R" appends="YES" id="64o-Td-Ble"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title=" Лабораторная работа №2" id="HwR-Ir-iGW">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="RXO-HY-WiK">
+                            <view key="customView" contentMode="scaleToFill" id="0XU-Wf-gX7">
+                                <rect key="frame" x="280" y="5" width="23" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="e93-MD-WTw">
+                                        <rect key="frame" x="0.0" y="7" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnGenerateKey" destination="Cu2-pu-TBt" id="AI5-JE-MiX"/>
+                        <outlet property="indicator" destination="e93-MD-WTw" id="gpA-a6-TUx"/>
+                        <outlet property="textViewCoddingOut" destination="ifh-iv-L3e" id="Ts9-H9-04q"/>
+                        <outlet property="textViewIn" destination="iUN-0m-yL4" id="whk-Xg-Pqp"/>
+                        <outlet property="tfBlockSize" destination="2Z2-Ha-kcr" id="g5G-vD-qRH"/>
+                        <outlet property="tfPageCount" destination="4ne-LF-wwA" id="fxi-c7-du8"/>
+                        <outlet property="tfPageNumber" destination="TSh-bW-yVs" id="Hfr-dI-PmN"/>
+                        <outlet property="tvKey" destination="aKM-q2-eU4" id="xtL-SA-Mtn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9F-3H-B38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ebm-QB-87R">
+                    <connections>
+                        <action selector="onViewTap" destination="uSA-Fz-UCt" id="Zgz-LU-S6j"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1081" y="1023"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="kfw-X4-ZEO">
+            <objects>
+                <viewController id="tmg-yo-93o" customClass="TitleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P02-mW-rgP"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hq-Lx-Fkg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0fL-uu-4E4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Copyright (c) 2015 Alex Tsiganov. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="auv-ZQ-oIU">
+                                <rect key="frame" x="20" y="527" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-Xg-N4G">
+                                <rect key="frame" x="20" y="115" width="281" height="141"/>
+                                <string key="text" base64-UTF8="YES">
+ENCb0LDQsdGA0L7QsNGC0L7RgNC90LDRjyDRgNCw0LHQvtGC0LAg0L/QviDQutGD0YDRgdGDOg
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-fb-t0n">
+                                <rect key="frame" x="20" y="16" width="281" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Крымский Федеральный Университет имени В.И. Вернадского
+«Таврическая академия»
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL0-69-iPD">
+                                <rect key="frame" x="-7" y="245" width="327" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Защита информации в компьютерных системах">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMu-YB-5Zc">
+                                <rect key="frame" x="50" y="316" width="221" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="доц. Михерский Р. М.">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-a8-hOm">
+                                <rect key="frame" x="126" y="407" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Выполнили: Цыганов А.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccn-1i-c3C">
+                                <rect key="frame" x="126" y="425" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТМ-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oj-JW-QoC">
+                                <rect key="frame" x="126" y="443" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Захаренков И.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irr-RR-c2d">
+                                <rect key="frame" x="126" y="462" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТП-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l5t-lR-3aQ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjz-a2-A1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="992"/>
+        </scene>
+        <!-- Лабораторная работа №4-->
+        <scene sceneID="xBk-7t-mDV">
+            <objects>
+                <viewController id="CVz-Lw-x58" customClass="ViewController4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E2L-FW-JfU"/>
+                        <viewControllerLayoutGuide type="bottom" id="uHY-yj-GHZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e11-Gx-TTN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Текст сообщения" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-pC-jCS">
+                                <rect key="frame" x="12" y="72" width="296" height="97"/>
+                                <color key="backgroundColor" red="0.93333339689999995" green="0.96862751250000001" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlV-YO-HIf">
+                                <rect key="frame" x="8" y="508" width="296" height="40"/>
+                                <state key="normal" title="Отправить сообщение">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSendButtonClick" destination="CVz-Lw-x58" eventType="touchUpInside" id="RxJ-J5-aHK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-dt-qnh">
+                                <rect key="frame" x="8" y="183" width="296" height="40"/>
+                                <state key="normal" title="Сгенерировать ключ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateKeyButtonClick" destination="CVz-Lw-x58" eventType="touchUpInside" id="abT-gw-hq0"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxs-To-J8C">
+                                <rect key="frame" x="8" y="257" width="296" height="97"/>
+                                <color key="backgroundColor" red="0.79607850313186646" green="0.92549026012420654" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Публичный ключ:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJw-oL-xwE">
+                                <rect key="frame" x="16" y="231" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-DW-vHn">
+                                <rect key="frame" x="8" y="391" width="296" height="97"/>
+                                <color key="backgroundColor" red="0.92156869173049927" green="0.60392159223556519" blue="0.58823531866073608" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Приватный ключ:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlx-Iu-JPs">
+                                <rect key="frame" x="16" y="362" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rsF-Ip-XWq" appends="YES" id="gju-Ea-BXB"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title=" Лабораторная работа №4" id="477-bB-eG1">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="FFC-Hj-fT9">
+                            <view key="customView" contentMode="scaleToFill" id="2OZ-cV-pJM">
+                                <rect key="frame" x="271" y="5" width="25" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-z8-vOF">
+                                        <rect key="frame" x="0.0" y="7" width="20" height="20"/>
+                                        <color key="color" red="0.019607843831181526" green="0.011764707043766975" blue="0.98823535442352295" alpha="1" colorSpace="deviceRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnGenerateKey" destination="Gdu-dt-qnh" id="sRS-IV-3Xn"/>
+                        <outlet property="indicator" destination="z9P-z8-vOF" id="beA-2S-7UB"/>
+                        <outlet property="textViewIn" destination="Qme-pC-jCS" id="fNx-Jf-4Gv"/>
+                        <outlet property="tvPrivateKey" destination="TTY-DW-vHn" id="FaO-bA-rKK"/>
+                        <outlet property="tvPublickKey" destination="Jxs-To-J8C" id="VKv-7f-hPX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpa-fh-oU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rsF-Ip-XWq">
+                    <connections>
+                        <action selector="onViewTap" destination="CVz-Lw-x58" id="ROj-YC-SeQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1073" y="1683"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="ewy-Md-J4S">
+            <objects>
+                <viewController id="dKf-W0-xDR" customClass="TitleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IXT-od-pM5"/>
+                        <viewControllerLayoutGuide type="bottom" id="oHn-uM-VPg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Akl-Pw-usc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Copyright (c) 2015 Alex Tsiganov. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-9e-Ehh">
+                                <rect key="frame" x="20" y="527" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-xJ-Knm">
+                                <rect key="frame" x="20" y="115" width="281" height="141"/>
+                                <string key="text" base64-UTF8="YES">
+ENCb0LDQsdGA0L7QsNGC0L7RgNC90LDRjyDRgNCw0LHQvtGC0LAg0L/QviDQutGD0YDRgdGDOg
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi7-TT-7KX">
+                                <rect key="frame" x="20" y="16" width="281" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Крымский Федеральный Университет имени В.И. Вернадского
+«Таврическая академия»
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgm-0Z-2s7">
+                                <rect key="frame" x="-7" y="245" width="327" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Защита информации в компьютерных системах">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Italic"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-fE-UjD">
+                                <rect key="frame" x="50" y="316" width="221" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="доц. Михерский Р. М.">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-Gd-T8M">
+                                <rect key="frame" x="126" y="407" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Выполнили: Цыганов А.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82l-gV-Rpx">
+                                <rect key="frame" x="126" y="425" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТМ-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbB-cx-uZl">
+                                <rect key="frame" x="126" y="443" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Захаренков И.,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkf-HJ-Xig">
+                                <rect key="frame" x="126" y="462" width="178" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="студент гр. ИВТП-4,">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="HelveticaNeue-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="igw-Bg-dqT" appends="YES" id="Ckv-OF-pld"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="DUc-3B-GE0"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9B0-yj-u8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="igw-Bg-dqT">
+                    <connections>
+                        <action selector="onTap" destination="dKf-W0-xDR" id="FYa-N2-HaX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="590" y="1735"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="2xI-Pq-3LU"/>
+    </inferredMetricsTieBreakers>
+</document>
